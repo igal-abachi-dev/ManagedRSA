@@ -1,5 +1,5 @@
 # ManagedRSA
-managed c# implementation of RSA (with CRT decrypt , OAEP-mgf1/PKCS#1 v1.5 pad, pkcs12 Pss pfx cert, miller-rabin 50 prime gen)
+managed c# modern implementation of RSA (with CRT decrypt , OAEP-mgf1/PKCS#1 v1.5 pad, pkcs12 Pss pfx cert, miller-rabin 50 prime gen)
 
 impl based on BigInteger(little endian,rsa is big endian) , Chinese Remainder Theorem(more performant decrypt) ,cryptographic RandomNumberGenerator
 
