@@ -22,6 +22,27 @@ GetBitLength() might need fix to be more accurate
 
 remove default Password from key managment , get as parameter(secure string maybe)
 
+add jwk key pair export:
+
+  private class RsaJwk
+    {
+        // JWK fields:
+        public string kty { get; set; } = "RSA";
+        public string kid { get; set; } = Guid.NewGuid().ToString();
+        public string use { get; set; } = "enc";
+        public string alg { get; set; } = "RS256";
+        // RSA fields:
+        public string n { get; set; }
+        public string e { get; set; }
+        public string d { get; set; }
+        // CRT fields:
+        public string p { get; set; }
+        public string q { get; set; }
+        public string dp { get; set; }
+        public string dq { get; set; }
+        public string qi { get; set; }
+    } 
+
 
 fixes todo:
 
