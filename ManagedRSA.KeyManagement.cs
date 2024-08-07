@@ -26,6 +26,10 @@ public partial class ManagedRSA
             RSAParameters rsaParameters;
             if (isPrivateKey)
             {
+                try{
+                    rsaParameters = privKey.ExportParameters(true);
+                }
+            catch{
                 var bytes = privKey.ExportEncryptedPkcs8PrivateKey(
                     Password,
                     new PbeParameters(
@@ -38,6 +42,7 @@ public partial class ManagedRSA
                     rsa.ImportEncryptedPkcs8PrivateKey(Password, bytes, out _);
                     rsaParameters = rsa.ExportParameters(true);
                 }
+              }
             }
             else
             {
